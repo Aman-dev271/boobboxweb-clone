@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Signup{% endblock %}
+
+{% block content %}
+
+     <!--<input type="text" name="first_name" placeholder="First_name"><br>-->
+    <!--<input type="text" name="last_name" placeholder="Last_name"><br>-->
+    <!--<input type="text" name="username" placeholder="Username"><br>-->
+
+<div style ="margin-right:30%; margin-left:30%;">
+
+
+<h2>Sign up Page</h2>
+
+<form  method="POST" action="signup">
+    {% csrf_token %}
+
+
+
+
+{{ form.as_p}}
+
+
+
+
+    <input type="submit" ><br>
+
+
+
+
+    <h2> If you are regular user
+        <button style="background-color:#eb8934;" type="button">
+<a href="{% url 'login' %}"> Login</a>
+
+    </button>
+    </h2>
+
+
+</form>
+<div>
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+</div>
+     </div>
+
+{% endblock %}
